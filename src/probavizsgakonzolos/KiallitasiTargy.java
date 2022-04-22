@@ -10,6 +10,7 @@ abstract public class KiallitasiTargy {
     private Date[] letrahozasi_datum;
     private String kesztio;
     private String cim;
+    private Festmeny festmeny;
 
 
     public KiallitasiTargy(Date[] letrahozasi_datum, String kesztio, String cim) {
@@ -23,6 +24,22 @@ abstract public class KiallitasiTargy {
         this.cim = cim;
         maiNap();
     }
+
+    public KiallitasiTargy(Date[] letrahozasi_datum, String kesztio, String cim, Festmeny festmeny) {
+        this.letrahozasi_datum = letrahozasi_datum;
+        this.kesztio = kesztio;
+        this.cim = cim;
+        this.festmeny = festmeny;
+    }
+
+    public KiallitasiTargy(String kesztio, String cim, Festmeny festmeny) {
+        this.kesztio = kesztio;
+        this.cim = cim;
+        this.festmeny = festmeny;
+        maiNap();
+    }
+    
+    
 
     public void maiNap() {
         SimpleDateFormat dnt = new SimpleDateFormat("dd/MM/yy");
